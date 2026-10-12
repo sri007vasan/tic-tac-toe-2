@@ -1,0 +1,67 @@
+:root {
+  --bg: #f0f0f0;
+  --cell-bg: #fff;
+  --x-color: #e63946;
+  --o-color: #457b9d;
+  --focus: #1d3557;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#app {
+  text-align: center;
+  width: 90vmin;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+#status {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.cell {
+  background: var(--cell-bg);
+  border: 2px solid #333;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  aspect-ratio: 1;
+  transition: background 0.2s;
+}
+
+.cell:focus {
+  outline: 3px solid var(--focus);
+}
+
+.cell[data-player="X"] {
+  color: var(--x-color);
+}
+
+.cell[data-player="O"] {
+  color: var(--o-color);
+}
+
+#reset {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
