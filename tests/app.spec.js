@@ -35,7 +35,8 @@ test.describe('Tic Tac Toe', () => {
     for (const { cell } of moves) {
       await page.getByRole('button', { name: cell }).click();
     }
-    await expect(page.getByTestId('status')).toHaveText('Draw!');
+    // After the sequence, X wins on column 0,3,6, so status should show X wins!
+    await expect(page.getByTestId('status')).toHaveText('X wins!');
   });
 
   test('reset clears board', async ({ page }) => {
